@@ -65,4 +65,4 @@ Issues and Pull Requests are welcome.
 
 ## License
 
-[MIT License](LICENSE)
+[GPL v3](LICENSE)

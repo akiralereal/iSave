@@ -65,4 +65,4 @@ chmod +x iSave/gallery-dl
 
 ## 开源许可
 
-[MIT License](LICENSE)
+[GPL v3](LICENSE)
