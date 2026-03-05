@@ -2,7 +2,10 @@
 
 [English](README.md) | **中文**
 
-<p align="center"><strong>如果你想关注更多，可以访问 iFans Club：</strong><br><a href="https://ifansclub.com/"><code>https://ifansclub.com/</code></a></p>
+<p align="center"><a href="https://ifansclub.com/"><img src="iSave/Resources/ifansclub.svg" alt="iFansClub" width="180" /></a></p>
+<p align="center"><strong>如果你想关注更多，可以访问 iFans Club：</strong></p>
+<p align="center"><a href="https://ifansclub.com/"><img alt="访问 iFans Club" src="https://img.shields.io/badge/VISIT-IFANSCLUB-57F2D2?style=for-the-badge&labelColor=1CCBA8&color=57F2D2" /></a></p>
+<p align="center"><a href="https://ifansclub.com/"><code>https://ifansclub.com/</code></a></p>
 
 一款 macOS 视频下载工具，支持 YouTube、Instagram、TikTok、哔哩哔哩等 1000+ 平台。
 

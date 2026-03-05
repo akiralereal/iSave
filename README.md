@@ -2,7 +2,10 @@
 
 **English** | [中文](README.zh.md)
 
-<p align="center"><strong>Want more updates? Visit iFans Club:</strong><br><a href="https://ifansclub.com/"><code>https://ifansclub.com/</code></a></p>
+<p align="center"><a href="https://ifansclub.com/"><img src="iSave/Resources/ifansclub.svg" alt="iFansClub" width="180" /></a></p>
+<p align="center"><strong>Want more updates? Visit iFans Club:</strong></p>
+<p align="center"><a href="https://ifansclub.com/"><img alt="Visit iFans Club" src="https://img.shields.io/badge/VISIT-IFANSCLUB-57F2D2?style=for-the-badge&labelColor=1CCBA8&color=57F2D2" /></a></p>
+<p align="center"><a href="https://ifansclub.com/"><code>https://ifansclub.com/</code></a></p>
 
 A macOS video downloader that supports YouTube, Instagram, TikTok, and 1000+ other sites.
 
