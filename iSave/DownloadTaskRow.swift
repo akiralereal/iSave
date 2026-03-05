@@ -111,7 +111,9 @@ struct ThumbnailView: View {
         }
         
         // 2. 本地没有，从远程加载
-        guard let imageURL = URL(string: url) else {
+        // 强制升级为 HTTPS（B 站 CDN 等部分平台返回 http:// 缩略图链接）
+        let secureUrl = url.hasPrefix("http://") ? "https://" + url.dropFirst(7) : url
+        guard let imageURL = URL(string: secureUrl) else {
             isLoading = false
             loadFailed = true
             return
