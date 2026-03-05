@@ -2,6 +2,8 @@
 
 [English](README.md) | **中文**
 
+<h3 align="center"><a href="https://ifansclub.com/">如果你想关注更多，可以访问 https://ifansclub.com/</a></h3>
+
 一款 macOS 视频下载工具，支持 YouTube、Instagram、TikTok、哔哩哔哩等 1000+ 平台。
 
 内置 [yt-dlp](https://github.com/yt-dlp/yt-dlp)、[ffmpeg](https://ffmpeg.org/)、[gallery-dl](https://github.com/mikf/gallery-dl)，开箱即用，无需额外安装。

@@ -2,6 +2,8 @@
 
 **English** | [中文](README.zh.md)
 
+<h3 align="center"><a href="https://ifansclub.com/">如果你想关注更多，可以访问 https://ifansclub.com/</a></h3>
+
 A macOS video downloader that supports YouTube, Instagram, TikTok, and 1000+ other sites.
 
 Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.org/), and [gallery-dl](https://github.com/mikf/gallery-dl) — bundled and ready to use out of the box.
