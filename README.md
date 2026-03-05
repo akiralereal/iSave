@@ -7,7 +7,7 @@
 <p align="center"><a href="https://ifansclub.com/"><img alt="Visit iFans Club" src="https://img.shields.io/badge/VISIT-IFANSCLUB-57F2D2?style=for-the-badge&labelColor=1CCBA8&color=57F2D2" /></a></p>
 <p align="center"><a href="https://ifansclub.com/"><code>https://ifansclub.com/</code></a></p>
 
-A macOS video downloader that supports YouTube, Instagram, TikTok, and 1000+ other sites.
+A macOS video & picture downloader that supports YouTube, Instagram, TikTok, and 1000+ other sites.
 
 Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.org/), and [gallery-dl](https://github.com/mikf/gallery-dl) — bundled and ready to use out of the box.
 
