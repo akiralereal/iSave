@@ -1,0 +1,7 @@
+# Git LFS configuration for large binary files
+# Video download tools (large binaries)
+iSave/yt-dlp filter=lfs diff=lfs merge=lfs -text
+iSave/ffmpeg filter=lfs diff=lfs merge=lfs -text
+iSave/deno filter=lfs diff=lfs merge=lfs -text
+# Backup: any large executable in iSave folder
+*.dylib filter=lfs diff=lfs merge=lfs -text

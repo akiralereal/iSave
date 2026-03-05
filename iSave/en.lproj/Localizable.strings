@@ -1,0 +1,215 @@
+/* App Name */
+"app.name" = "iSave";
+
+/* Main View */
+"main.url_placeholder" = "Paste video link...";
+/* Format Labels */
+"format.video" = "Video";
+"format.audio" = "Audio";"main.add_download" = "Add Download";
+"main.start_download" = "Start Download";
+"main.format" = "Format";
+"main.video_quality" = "Video Quality";
+"main.audio_quality" = "Audio Quality";
+"main.save_location" = "Save Location";
+"main.select_folder" = "Select Folder";
+"main.not_selected" = "Not Selected";
+"main.downloading_count" = "Downloading: %d | Waiting: %d";
+"main.download_tasks" = "Download Tasks (%d)";
+"main.history" = "History (%d)";
+"main.no_tasks" = "No download tasks";
+"main.no_tasks_hint" = "Paste a video link and click 'Add Download' to start";
+"main.no_history" = "No history";
+"main.clear_history" = "Clear History";
+"main.select_folder_title" = "Select Save Folder";
+"main.select_button" = "Select";
+"main.open_folder" = "Open folder in Finder";
+
+/* Video Quality */
+"quality.best" = "Best";
+"quality.2160p" = "Max 2160p (4K)";
+"quality.1440p" = "Max 1440p (2K)";
+"quality.1080p" = "Max 1080p";
+"quality.720p" = "Max 720p";
+"quality.480p" = "Max 480p";
+"quality.360p" = "Max 360p";
+"quality.240p" = "Max 240p";
+"quality.144p" = "Max 144p";
+
+/* Download Destination */
+"destination.downloads" = "Downloads";
+"destination.desktop" = "Desktop";
+"destination.movies" = "Movies";
+"destination.custom" = "Custom";
+
+/* Audio Quality */
+"audio.320kbps" = "320 kbps";
+"audio.256kbps" = "256 kbps";
+"audio.192kbps" = "192 kbps";
+"audio.160kbps" = "160 kbps";
+"audio.128kbps" = "128 kbps";
+"audio.96kbps" = "96 kbps";
+"audio.64kbps" = "64 kbps";
+"audio.vbr_best" = "VBR 0 (Best)";
+"audio.vbr_low" = "VBR 9 (Low)";
+"audio.quality.highest" = "Best";
+"audio.quality.default" = "Default";
+"audio.quality.lowest" = "Low";
+
+/* Task Status */
+"status.waiting" = "Waiting";
+"status.downloading" = "Downloading";
+"status.completed" = "Completed";
+"status.failed" = "Failed";
+"status.paused" = "Paused";
+"status.fetching_info" = "Fetching video info...";
+"status.fetching_audio_info" = "Fetching audio info...";
+"status.fetching_media_info" = "Fetching media info...";
+
+/* Download Info */
+"info.total" = "Total";
+"info.duration" = "Duration";
+
+/* Task Actions */
+"action.paste" = "Paste Link";
+"action.start" = "Start";
+"action.pause" = "Pause";
+"action.resume" = "Resume";
+"action.stop" = "Stop";
+"action.retry" = "Retry";
+"action.open_file" = "Open File";
+"action.open_folder" = "Open Folder";
+"action.copy_link" = "Copy Link";
+"action.show_log" = "Show Log";
+"action.hide_log" = "Hide Log";
+"action.remove" = "Remove";
+"action.clear_records" = "Clear Records";
+"action.clear_records_hint" = "Files will not be deleted";
+"action.start_all" = "Start All Tasks";
+"action.stop_all" = "Pause All Tasks";
+"action.show_in_finder" = "Show in Finder";
+"action.open_in_browser" = "Open in Browser";
+"action.continue_task" = "Continue Task";
+"action.pause_task" = "Pause Task";
+"action.delete_task" = "Delete Task";
+"action.clear_all" = "Clear List";
+"action.show_thumbnails" = "Show Thumbnails";
+"action.hide_thumbnails" = "Hide Thumbnails";
+"action.more" = "More Actions";
+"action.more" = "More Actions";
+"alert.clear_records.title" = "Confirm Clear Records";
+"alert.clear_records.message" = "This will clear all download records and cannot be recovered after next app launch.";
+"alert.empty_clipboard.title" = "Clipboard is Empty";
+"alert.empty_clipboard.message" = "Please copy a video link first, then click the paste button to start downloading.";
+"alert.invalid_link.title" = "Invalid Link";
+"alert.invalid_link.message" = "The clipboard content is not a valid video or audio link. Please copy a correct link and try again.";
+"action.confirm" = "Confirm";
+"action.cancel" = "Cancel";
+"action.ok" = "OK";
+
+/* Messages */
+"message.yt_dlp_not_found" = "yt-dlp not found";
+"message.file_deleted" = "File has been deleted";
+
+/* Language */
+"language.title" = "Language";
+"language.system" = "System";
+"language.english" = "English";
+"language.chinese_simplified" = "Chinese (Simplified)";
+
+/* Menu */
+"menu.website" = "Visit Website";
+"menu.settings" = "Settings...";
+"menu.show_window" = "Open iSave";
+"menu.quit" = "Quit iSave";
+
+/* Settings */
+"settings.general" = "Language";
+"settings.license" = "License";
+"settings.storage" = "Cache";
+"settings.version_check" = "Version Check";
+"settings.advanced" = "Advanced";
+"settings.about" = "About";
+"settings.use_browser_cookies" = "Use Browser Cookies";
+"settings.cookies_warning" = "⚠️ May risk account restrictions. Only enable when downloading restricted content.";
+
+/* Advanced Settings */
+"advanced.concurrent_downloads" = "Concurrent Downloads";
+"advanced.concurrent_downloads.unit" = "tasks";
+"advanced.concurrent_downloads.description" = "Too many may cause temporary IP bans from some websites";
+"advanced.prevent_sleep" = "Keep Network Active During Downloads";
+"advanced.prevent_sleep.description" = "Prevents network disconnection when closing laptop lid";
+
+/* Version Check */
+"version.current" = "Current Version";
+"version.check_update" = "Check for Updates";
+"version.up_to_date" = "You have the latest version";
+"version.new_version" = "New version available: %@";
+
+/* Update Alert */
+"update.new_version_available" = "New Version Available";
+"update.release_notes" = "Release Notes";
+"update.current_version" = "Current Version:";
+"update.latest_version" = "Latest Version:";
+"update.later" = "Later";
+"update.view_details" = "View Details";
+"update.download_now" = "Download Now";
+
+/* Storage Management */
+"storage.title" = "Storage Management";
+"storage.total_cache" = "Total Cache";
+"storage.cache_size" = "Cache Size";
+"storage.thumbnail_cache" = "Video Thumbnail Cache";
+"storage.thumbnail_cache_desc" = "Thumbnails loaded from network";
+"storage.download_records" = "Download Records";
+"storage.download_records_desc" = "History of completed downloads";
+"storage.temp_files" = "Temporary Files";
+"storage.temp_files_desc" = "Temporary data during downloads";
+"storage.clear_all" = "Clear All Cache";
+"storage.clear_confirm_title" = "Confirm Clear";
+"storage.clear_confirm_message" = "This will clear all cached data, but downloaded video files will not be deleted.";
+"storage.clear_confirm_yes" = "Clear";
+"storage.clear_confirm_no" = "Cancel";
+"storage.clear_success" = "Cache Cleared";
+
+/* Audio Quality */
+"audio.quality.highest" = "Highest Quality";
+"audio.quality.default" = "Default";
+"audio.quality.lowest" = "Lowest Quality";
+
+/* License */
+"license.activated" = "Activated";
+"license.not_activated" = "Not Activated";
+"license.expired" = "Expired";
+"license.offline" = "Offline Mode";
+"license.unknown" = "Unknown";
+"license.unlimited_downloads" = "Activated, Unlimited Downloads";
+"license.remaining_downloads" = "%d downloads remaining today, activate license to unlock unlimited downloads";
+"license.activate_button" = "Activate";
+"license.manage_button" = "Manage";
+"license.limit_reached_title" = "Download Limit Reached";
+"license.limit_reached_message" = "You have used up your free downloads for today (20 downloads total).\n\nPurchase and activate a license to unlock unlimited downloads.";
+"license.limit_reached_later" = "Later";
+"license.limit_reached_activate" = "Activate License";
+"license.activated_info" = "Activation Information";
+"license.deactivate" = "Deactivate";
+"license.deactivate_confirm_title" = "Confirm Deactivation";
+"license.deactivate_confirm_message" = "After deactivation, you will return to the free version (20 downloads per day limit). You can reactivate later.";
+"license.cancel" = "Cancel";
+"license.deactivate_hint" = "After deactivation, your license remains valid and can be used on other devices or reactivated.";
+"license.current_device" = "Current Device";
+"license.activate_license" = "Activate License";
+"license.license_key" = "License Key";
+"license.verify" = "Verify";
+"license.deactivating" = "Deactivating...";
+"license.activate_hint" = "Enter your License Key to activate. After activation, you can enjoy the corresponding daily download limit according to your license type.";
+"license.deactivate_failed" = "Deactivation Failed";
+"license.ok" = "OK";
+"license.status_title" = "License Status";
+"license.unlimited_downloads_short" = "Unlimited Downloads";
+"license.activated_user" = "Activated User";
+"license.daily_limit" = "Daily Limit: 20 times";
+"license.remaining_today" = "Remaining Today: %d times";
+
+/* Login Required Toast */
+"toast.login_required.title" = "Login Required to Download";
+"toast.login_required.message" = "Please sign in to %@ in your browser first, then retry.";

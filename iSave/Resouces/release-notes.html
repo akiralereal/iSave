@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>iSave 版本更新说明</title>
+  <meta name="description" content="iSave Mac 应用版本更新历史和下载" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --card: rgba(255,255,255,0.65);
+      --fg: #0e1512;
+      --muted: rgba(14,21,18,0.65);
+      --muted2: rgba(14,21,18,0.45);
+      --border: rgba(14,21,18,0.12);
+      --g: #1FD1A5;
+      --g2: #7BE9CD;
+    }
+
+    html { overflow-y: scroll; }
+    body {
+      padding-top: 40px;
+      background: var(--bg);
+    }
+
+    .article-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    .article-header {
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-title {
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: var(--fg);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 12px 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .article-meta span { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 6px; 
+    }
+
+    .article-content {
+      max-width: 100%;
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--fg);
+    }
+
+    .release-card {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 40px 0;
+      margin-bottom: 0;
+    }
+
+    .release-card:last-child {
+      border-bottom: none;
+    }
+    
+    .release-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+      border-bottom: none;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .version-badge {
+      background: linear-gradient(135deg, var(--g) 0%, var(--g2) 100%);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .version-badge.latest {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+    
+    .release-date {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    .release-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--fg);
+    }
+    
+    .release-notes {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    
+    .release-notes li {
+      padding: 10px 0;
+      padding-left: 28px;
+      position: relative;
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    
+    .release-notes li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--g);
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--g) 0%, var(--g2) 100%);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(31, 209, 165, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .article-container {
+        padding: 32px 20px 48px;
+      }
+      .article-title {
+        font-size: clamp(24px, 6vw, 32px);
+      }
+      .release-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .release-card {
+        padding: 32px 0;
+      }
+      .release-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="article-container">
+      <div class="article-header">
+        <h1 class="article-title">iSave 版本更新说明</h1>
+        <div class="article-meta">
+          <span>�️ macOS 应用</span>
+          <span>🔄 持续更新</span>
+          <span>📦 <a href="https://github.com/akiralereal/iSave/releases" style="color:var(--g);text-decoration:none;">GitHub Releases</a></span>
+        </div>
+      </div>
+
+      <div class="article-content">
+        <!-- 版本 1.0.0 -->
+        <div class="release-card">
+          <div class="release-header">
+            <span class="version-badge latest">最新版本</span>
+            <span class="release-date">2026年3月5日</span>
+          </div>
+          <h2 class="release-title">iSave 1.0.0</h2>
+          <ul class="release-notes">
+            <li>首个开源版本发布</li>
+            <li>支持 YouTube、Instagram、TikTok 等主流平台视频下载</li>
+            <li>支持导出 MP4、MKV、MP3、M4A 格式</li>
+            <li>支持并发下载，可设置最多同时下载任务数</li>
+            <li>自动读取浏览器 Cookie，下载需登录的内容</li>
+            <li>内置 yt-dlp、ffmpeg、gallery-dl，开箱即用</li>
+          </ul>
+          <a href="https://github.com/akiralereal/iSave/releases/download/v1.0.0/iSave.dmg" class="download-btn">下载 iSave 1.0.0</a>
+        </div>
+
+        <!-- 后续版本在此追加，格式参考上方 -->
+
+      </div>
+    </article>
+  </main>
+
+</body>
+</html>

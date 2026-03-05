@@ -1,0 +1,12 @@
+// Local build configuration — copy this file to Local.xcconfig and fill in your own values.
+// Local.xcconfig is gitignored and will NOT be committed.
+//
+// Usage:
+//   cp Config/Local.xcconfig.example Config/Local.xcconfig
+//   Then open Xcode > Project Settings > Info > Configurations and set Local.xcconfig.
+
+// Your Apple Developer Team ID (10-character string, found at developer.apple.com/account)
+DEVELOPMENT_TEAM = YOUR_TEAM_ID
+
+// Your app Bundle Identifier (change if you want to run a personal build)
+PRODUCT_BUNDLE_IDENTIFIER = com.example.iSave

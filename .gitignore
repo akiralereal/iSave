@@ -1,0 +1,27 @@
+# Local build config (contains personal Team ID, never commit)
+Config/Local.xcconfig
+
+# Xcode
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Build artifacts
+build/
+*.o
+*.a
+*.swp
+
+# Release folder (build scripts, outputs, signing configs — not committed)
+release/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db

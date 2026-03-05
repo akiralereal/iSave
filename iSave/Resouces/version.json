@@ -1,0 +1,14 @@
+{
+  "appId": "com.ceaule.iSave",
+  "latest": "1.0.0",
+  "minSupported": "1.0.0",
+  "build": 100,
+  "title": "iSave 1.0.0",
+  "notes": [
+    "首个开源版本发布"
+  ],
+  "pubDate": "2026-03-05T00:00:00Z",
+  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/v1.0.0/iSave.dmg",
+  "releasePage": "https://github.com/akiralereal/iSave/releases",
+  "mandatory": false
+}

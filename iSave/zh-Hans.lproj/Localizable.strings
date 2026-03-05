@@ -1,0 +1,217 @@
+/* App Name */
+"app.name" = "iSave";
+
+/* Main View */
+"main.url_placeholder" = "粘贴视频链接...";
+
+/* Format Labels */
+"format.video" = "视频";
+"format.audio" = "音频";
+"main.add_download" = "添加下载";
+"main.start_download" = "开始下载";
+"main.format" = "格式";
+"main.video_quality" = "画质";
+"main.audio_quality" = "音质";
+"main.save_location" = "保存位置";
+"main.select_folder" = "选择文件夹";
+"main.not_selected" = "未选择";
+"main.downloading_count" = "下载中: %d | 等待: %d";
+"main.download_tasks" = "下载任务 (%d)";
+"main.history" = "历史记录 (%d)";
+"main.no_tasks" = "暂无下载任务";
+"main.no_tasks_hint" = "粘贴视频链接并点击「添加下载」开始";
+"main.no_history" = "暂无历史记录";
+"main.clear_history" = "清空历史";
+"main.select_folder_title" = "选择保存文件夹";
+"main.select_button" = "选择";
+"main.open_folder" = "在访达器中打开文件夹";
+
+/* Video Quality */
+"quality.best" = "最高";
+"quality.2160p" = "最高2160p (4K)";
+"quality.1440p" = "最高1440p (2K)";
+"quality.1080p" = "最高1080p";
+"quality.720p" = "最高720p";
+"quality.480p" = "最高480p";
+"quality.360p" = "最高360p";
+"quality.240p" = "最高240p";
+"quality.144p" = "最高144p";
+
+/* Download Destination */
+"destination.downloads" = "Downloads";
+"destination.desktop" = "Desktop";
+"destination.movies" = "Movies";
+"destination.custom" = "自定义";
+
+/* Audio Quality */
+"audio.320kbps" = "320 kbps";
+"audio.256kbps" = "256 kbps";
+"audio.192kbps" = "192 kbps";
+"audio.160kbps" = "160 kbps";
+"audio.128kbps" = "128 kbps";
+"audio.96kbps" = "96 kbps";
+"audio.64kbps" = "64 kbps";
+"audio.vbr_best" = "VBR 0 (最佳)";
+"audio.vbr_low" = "VBR 9 (低)";
+"audio.quality.highest" = "最佳";
+"audio.quality.default" = "默认";
+"audio.quality.lowest" = "低";
+
+/* Task Status */
+"status.waiting" = "等待中";
+"status.downloading" = "下载中";
+"status.completed" = "已完成";
+"status.failed" = "失败";
+"status.paused" = "已暂停";
+"status.fetching_info" = "正在获取视频信息...";
+"status.fetching_audio_info" = "正在获取音频信息...";
+"status.fetching_media_info" = "正在获取媒体信息...";
+
+/* Download Info */
+"info.total" = "共";
+"info.duration" = "时长";
+
+/* Task Actions */
+"action.paste" = "粘贴链接";
+"action.start" = "开始";
+"action.pause" = "暂停";
+"action.resume" = "继续";
+"action.stop" = "停止";
+"action.retry" = "重试";
+"action.open_file" = "打开文件";
+"action.open_folder" = "打开文件夹";
+"action.copy_link" = "复制链接";
+"action.show_log" = "显示日志";
+"action.hide_log" = "隐藏日志";
+"action.remove" = "移除";
+"action.clear_records" = "清空记录";
+"action.clear_records_hint" = "不会清空本地资源文件";
+"action.start_all" = "开始所有任务";
+"action.stop_all" = "暂停所有任务";
+"action.show_in_finder" = "在Finder中显示";
+"action.open_in_browser" = "用浏览器打开";
+"action.continue_task" = "继续该任务";
+"action.pause_task" = "暂停该任务";
+"action.delete_task" = "删除该任务";
+"action.clear_all" = "清空列表";
+"action.show_thumbnails" = "显示缩略图";
+"action.hide_thumbnails" = "隐藏缩略图";
+"action.more" = "更多操作";
+"action.show_thumbnails" = "显示缩略图";
+"action.hide_thumbnails" = "隐藏缩略图";
+"alert.clear_records.title" = "确认清空记录";
+"alert.clear_records.message" = "此操作将清空所有下载记录，下次启动应用后无法恢复。";
+"alert.empty_clipboard.title" = "剪切板为空";
+"alert.empty_clipboard.message" = "请先复制视频链接,然后点击粘贴按钮开始下载。";"alert.invalid_link.title" = "无效的链接";
+"alert.invalid_link.message" = "剪切板内容不是有效的视频或音频链接,请复制正确的链接后重试。";"action.confirm" = "确认";
+"action.cancel" = "取消";
+"action.ok" = "好的";
+
+/* Messages */
+"message.yt_dlp_not_found" = "找不到 yt-dlp";
+"message.file_deleted" = "文件已被删除";
+
+/* Language */
+"language.title" = "语言";
+"language.system" = "跟随系统";
+"language.english" = "英语";
+"language.chinese_simplified" = "简体中文";
+
+/* Menu */
+"menu.website" = "访问网站";
+"menu.settings" = "设置...";
+"menu.show_window" = "打开iSave";
+"menu.quit" = "退出 iSave";
+
+/* Settings */
+"settings.general" = "语言";
+"settings.license" = "License";
+"settings.storage" = "缓存管理";
+"settings.version_check" = "版本检测";
+"settings.advanced" = "高级";
+"settings.about" = "关于";
+"settings.use_browser_cookies" = "使用浏览器 Cookies";
+"settings.cookies_warning" = "⚠️ 可能导致账号受限，仅在下载受限内容时启用。";
+
+/* Advanced Settings */
+"advanced.concurrent_downloads" = "同时下载任务数";
+"advanced.concurrent_downloads.unit" = "个";
+"advanced.concurrent_downloads.description" = "建议不要同时太多，可能会被某些网站临时禁止IP";
+"advanced.prevent_sleep" = "下载时保持网络连接";
+"advanced.prevent_sleep.description" = "开启后，合上电脑屏幕时也会继续下载，防止网络断开";
+
+/* Version Check */
+"version.current" = "当前版本";
+"version.check_update" = "检查更新";
+"version.up_to_date" = "已是最新版本";
+"version.new_version" = "发现新版本：%@";
+
+/* Update Alert */
+"update.new_version_available" = "发现新版本";
+"update.release_notes" = "更新内容";
+"update.current_version" = "当前版本:";
+"update.latest_version" = "最新版本:";
+"update.later" = "稍后";
+"update.view_details" = "查看详情";
+"update.download_now" = "立即下载";
+
+/* Storage Management */
+"storage.title" = "存储管理";
+"storage.total_cache" = "缓存总计";
+"storage.cache_size" = "缓存大小";
+"storage.thumbnail_cache" = "视频缩略图缓存";
+"storage.thumbnail_cache_desc" = "通过网络加载的缩略图";
+"storage.download_records" = "下载记录";
+"storage.download_records_desc" = "已完成下载的历史记录";
+"storage.temp_files" = "临时文件";
+"storage.temp_files_desc" = "下载过程中的临时数据";
+"storage.clear_all" = "清除所有缓存";
+"storage.clear_confirm_title" = "确认清除";
+"storage.clear_confirm_message" = "将清除所有缓存数据，但本地下载的视频文件不会被删除。";
+"storage.clear_confirm_yes" = "清除";
+"storage.clear_confirm_no" = "取消";
+"storage.clear_success" = "缓存已清除";
+
+/* Audio Quality */
+"audio.quality.highest" = "最高质量";
+"audio.quality.default" = "默认";
+"audio.quality.lowest" = "最低质量";
+/* License */
+"license.activated" = "已激活";
+"license.not_activated" = "未激活";
+"license.expired" = "已过期";
+"license.offline" = "离线模式";
+"license.unknown" = "未验证";
+"license.unlimited_downloads" = "已激活，无限制下载";
+"license.remaining_downloads" = "今天还有 %d 次下载机会，激活许可证以解锁无限下载";
+"license.activate_button" = "激活";
+"license.manage_button" = "管理";
+"license.limit_reached_title" = "下载次数已用完";
+"license.limit_reached_message" = "您今天的免费下载次数已用完（共 20 次）。
+
+购买并激活许可证后，可解锁无限下载功能。";
+"license.limit_reached_later" = "稍后";
+"license.limit_reached_activate" = "激活许可证";
+"license.activated_info" = "激活信息";
+"license.deactivate" = "取消激活";
+"license.deactivate_confirm_title" = "确认取消激活";
+"license.deactivate_confirm_message" = "取消激活后将恢复为免费版本（每日20次下载限制）。您可以稍后重新激活。";
+"license.cancel" = "取消";
+"license.deactivate_hint" = "取消激活后，您的许可证仍然有效，可以在其他设备上使用或重新激活。";
+"license.current_device" = "当前设备";
+"license.activate_license" = "激活 License";
+"license.license_key" = "许可证代码";
+"license.verify" = "验证";
+"license.deactivating" = "正在取消激活...";
+"license.activate_hint" = "请输入您的 License Key 进行激活。激活后可根据 License 类型享受相应的每日下载次数。";
+"license.deactivate_failed" = "取消激活失败";
+"license.ok" = "确定";
+"license.status_title" = "License 状态";
+"license.unlimited_downloads_short" = "无限制下载";
+"license.activated_user" = "已激活用户";
+"license.daily_limit" = "每日限额：20 次";
+"license.remaining_today" = "今日剩余：%d 次";
+
+/* Login Required Toast */
+"toast.login_required.title" = "该视频需要登录才能下载";
+"toast.login_required.message" = "请先在浏览器中登录 %@，然后重试下载";
