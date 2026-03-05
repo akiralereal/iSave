@@ -6,6 +6,8 @@ A macOS video downloader that supports YouTube, Instagram, TikTok, and 1000+ oth
 
 Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.org/), and [gallery-dl](https://github.com/mikf/gallery-dl) — bundled and ready to use out of the box.
 
+![iSave Screenshot](iSave/Resources/isave.jpg)
+
 ---
 
 ## Features

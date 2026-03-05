@@ -6,6 +6,8 @@
 
 内置 [yt-dlp](https://github.com/yt-dlp/yt-dlp)、[ffmpeg](https://ffmpeg.org/)、[gallery-dl](https://github.com/mikf/gallery-dl)，开箱即用，无需额外安装。
 
+![iSave 截图](iSave/Resources/isave-zh.jpg)
+
 ---
 
 ## 功能

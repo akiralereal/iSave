@@ -25,7 +25,7 @@ class VersionChecker: ObservableObject {
     @Published var versionInfo: VersionInfo?
     @Published var showUpdateAlert = false
     
-    private let versionURL = "https://raw.githubusercontent.com/akiralereal/iSave/main/iSave/Resouces/version.json"
+    private let versionURL = "https://raw.githubusercontent.com/akiralereal/iSave/main/iSave/Resources/version.json"
     private var hasShownAutoAlert = false // 标记是否已经自动显示过弹窗
     
     private init() {}
