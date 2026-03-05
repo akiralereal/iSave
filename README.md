@@ -1,31 +1,33 @@
 # iSave
 
-一款 macOS 视频下载工具，支持 YouTube、Instagram、TikTok 等主流平台。
+**English** | [中文](README.zh.md)
 
-内置 [yt-dlp](https://github.com/yt-dlp/yt-dlp)、[ffmpeg](https://ffmpeg.org/)、[gallery-dl](https://github.com/mikf/gallery-dl)，开箱即用，无需额外安装。
+A macOS video downloader that supports YouTube, Instagram, TikTok, and 1000+ other sites.
+
+Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.org/), and [gallery-dl](https://github.com/mikf/gallery-dl) — bundled and ready to use out of the box.
 
 ---
 
-## 功能
+## Features
 
-- **多平台支持**：YouTube、Instagram、TikTok 及 yt-dlp 支持的 1000+ 网站
-- **格式灵活**：导出 MP4、MKV、MP3、M4A
-- **画质可选**：支持选择视频分辨率和音频码率
-- **并发下载**：可设置同时下载任务数（1 / 2 / 3 / 5）
-- **Cookie 支持**：自动读取 Safari、Chrome 等浏览器 Cookie，下载需登录内容
-- **防睡眠**：下载期间可保持系统唤醒
-- **自动更新检测**：内置版本检查
+- **Multi-platform**: YouTube, Instagram, TikTok, Bilibili, and 1000+ sites supported by yt-dlp
+- **Flexible formats**: Export as MP4, MKV, MP3, or M4A
+- **Quality options**: Choose video resolution and audio bitrate
+- **Concurrent downloads**: Set 1 / 2 / 3 / 5 simultaneous tasks
+- **Cookie support**: Automatically reads cookies from Safari, Chrome, etc. for login-required content
+- **Sleep prevention**: Keeps the system awake during downloads
+- **Auto update check**: Built-in version checker
 
-## 系统要求
+## Requirements
 
-- macOS 12.4 或更高版本
-- Apple Silicon 或 Intel
+- macOS 12.4 or later
+- Apple Silicon or Intel
 
-## 下载
+## Download
 
-前往 [Releases](https://github.com/akiralereal/iSave/releases) 页面下载最新版本 `.dmg` 文件。
+Visit the [Releases](https://github.com/akiralereal/iSave/releases) page to download the latest `.dmg`.
 
-## 从源码构建
+## Build from Source
 
 ```bash
 git clone https://github.com/akiralereal/iSave.git
@@ -33,13 +35,13 @@ cd iSave
 open iSave.xcodeproj
 ```
 
-在 Xcode 中：
-1. **Signing & Capabilities** → 选择你自己的 Apple Developer 账号
-2. **Product → Run**（⌘R）
+In Xcode:
+1. **Signing & Capabilities** → select your own Apple Developer account
+2. **Product → Run** (⌘R)
 
-> 首次构建 Xcode 会自动拉取 SPM 依赖，无需手动操作。
+> Xcode will automatically resolve SPM dependencies on first build.
 
-## 更新内置工具
+## Updating Bundled Tools
 
 ### yt-dlp
 
@@ -55,10 +57,10 @@ curl -L https://github.com/mikf/gallery-dl/releases/latest/download/gallery-dl.b
 chmod +x iSave/gallery-dl
 ```
 
-## 参与贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request。
+Issues and Pull Requests are welcome.
 
-## 开源许可
+## License
 
 [MIT License](LICENSE)
