@@ -24,16 +24,14 @@ class CacheManager: ObservableObject {
         DispatchQueue.global(qos: .userInitiated).async {
             var totalSize: Int64 = 0
             
-            // 1. 缩略图缓存 - 实际统计URLCache磁盘缓存大小
+            // 1. 缩略图缓存（新目录 + 旧目录）
             var thumbnailSize: Int64 = 0
-            if let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
-                // 统计应用的缓存目录（包含 Cache.db 和 fsCachedData）
-                let appCacheDir = cacheURL.appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.ceaule.iSave")
-                if let size = self.directorySize(url: appCacheDir) {
-                    thumbnailSize = size
-                    totalSize += size
+            for dir in self.thumbnailCacheDirectories() {
+                if let size = self.directorySize(url: dir) {
+                    thumbnailSize += size
                 }
             }
+            totalSize += thumbnailSize
             
             // 2. 下载记录 - 统计实际存在的记录
             let recordsCount = DownloadManager.shared.tasks.count
@@ -76,6 +74,15 @@ class CacheManager: ObservableObject {
             if let cacheDir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.ceaule.iSave") {
                 try? FileManager.default.removeItem(at: cacheDir)
                 try? FileManager.default.createDirectory(at: cacheDir, withIntermediateDirectories: true)
+            }
+            
+            // 4. 清除缩略图持久缓存目录（Application Support）
+            if let supportBase = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
+                let supportThumbDir = supportBase
+                    .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.ceaule.iSave")
+                    .appendingPathComponent("thumbnails")
+                try? FileManager.default.removeItem(at: supportThumbDir)
+                try? FileManager.default.createDirectory(at: supportThumbDir, withIntermediateDirectories: true)
             }
             
             // 清除完成后直接显示 0（不重新计算，避免统计到系统自动生成的索引文件）
@@ -126,6 +133,29 @@ class CacheManager: ObservableObject {
         }
         
         return totalSize
+    }
+    
+    private func thumbnailCacheDirectories() -> [URL] {
+        let bundleID = Bundle.main.bundleIdentifier ?? "com.ceaule.iSave"
+        var dirs: [URL] = []
+        
+        if let supportBase = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
+            dirs.append(
+                supportBase
+                    .appendingPathComponent(bundleID)
+                    .appendingPathComponent("thumbnails")
+            )
+        }
+        
+        if let cacheBase = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
+            dirs.append(
+                cacheBase
+                    .appendingPathComponent(bundleID)
+                    .appendingPathComponent("thumbnails")
+            )
+        }
+        
+        return dirs
     }
     
     // 格式化字节大小

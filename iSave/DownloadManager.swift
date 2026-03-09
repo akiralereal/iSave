@@ -927,8 +927,8 @@ class DownloadManager: ObservableObject {
                                 task.downloadedMediaCount = totalFileCount
                                 task.filePath = possiblePath  // 保存最新的文件路径
                                 task.progress = "已下载 \(totalFileCount) 个文件"
-                                // 第一个文件作为封面缩略图
-                                if isFirst && task.thumbnailURL.isEmpty {
+                                // 第一个下载文件作为封面，优先使用本地 file:// 路径，避免远程时效链接失效
+                                if isFirst {
                                     task.thumbnailURL = "file://" + possiblePath
                                 }
                                 print("📁 gallery-dl downloaded: \(possiblePath)")
@@ -954,7 +954,7 @@ class DownloadManager: ObservableObject {
                                     task.downloadedMediaCount = downloadedFiles.count
                                     task.filePath = cleanPath
                                     task.progress = "已下载 \(downloadedFiles.count) 个文件"
-                                    if isFirst && task.thumbnailURL.isEmpty {
+                                    if isFirst {
                                         task.thumbnailURL = "file://" + cleanPath
                                     }
                                     print("📁 gallery-dl file: \(cleanPath)")
@@ -975,6 +975,9 @@ class DownloadManager: ObservableObject {
                         task.downloadedMediaCount = fileCount
                         task.totalMediaCount = fileCount  // 完成后用实际数修正总数确保100%
                         task.progress = fileCount > 0 ? "共下载 \(fileCount) 个文件" : "下载完成"
+                        if task.isImageDownload, let firstFile = downloadedFiles.first {
+                            task.thumbnailURL = "file://" + firstFile
+                        }
                         task.log += "\n\(self?.logTS() ?? "")--- 下载完成（共 \(fileCount) 个文件）---\n"
                         
                         // 更新文件大小
@@ -1300,6 +1303,14 @@ class DownloadManager: ObservableObject {
                 task.isImageDownload = record.isImageDownload
                 task.downloadedMediaCount = record.downloadedMediaCount
                 task.totalMediaCount = record.totalMediaCount
+                
+                // 兼容旧记录：IG 缩略图若仍是远程 URL，优先切换到本地已下载文件
+                if task.isImageDownload,
+                   !task.filePath.isEmpty,
+                   FileManager.default.fileExists(atPath: task.filePath),
+                   !task.thumbnailURL.hasPrefix("file://") {
+                    task.thumbnailURL = "file://" + task.filePath
+                }
                 return task
             }
         }

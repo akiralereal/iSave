@@ -10,13 +10,14 @@ let SHOW_LOG_BUTTON = false
 struct ThumbnailView: View {
     let taskID: UUID
     let url: String
+    let fallbackLocalPath: String?
     @State private var image: NSImage?
     @State private var isLoading = true
     @State private var loadFailed = false
     
-    /// 本地缩略图缓存目录
+    /// 本地缩略图缓存目录（Application Support，避免被系统自动清理）
     static let cacheDir: URL = {
-        let base = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
         let dir = base
             .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.ceaule.iSave")
             .appendingPathComponent("thumbnails")
@@ -24,8 +25,20 @@ struct ThumbnailView: View {
         return dir
     }()
     
+    /// 兼容旧版本（Caches 目录）
+    static let legacyCacheDir: URL = {
+        let base = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        return base
+            .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.ceaule.iSave")
+            .appendingPathComponent("thumbnails")
+    }()
+    
     private var localCachePath: URL {
-        ThumbnailView.cacheDir.appendingPathComponent("\(taskID.uuidString).jpg")
+        ThumbnailView.cacheDir.appendingPathComponent("\(taskID.uuidString).img")
+    }
+    
+    private var legacyLocalCachePath: URL {
+        ThumbnailView.legacyCacheDir.appendingPathComponent("\(taskID.uuidString).jpg")
     }
     
     var body: some View {
@@ -64,41 +77,7 @@ struct ThumbnailView: View {
         // 0. 处理本地文件（file:// 开头）
         if url.hasPrefix("file://") {
             let localPath = String(url.dropFirst(7))
-            let videoExts = ["mp4", "mov", "mkv", "webm", "m4v"]
-            let ext = (localPath as NSString).pathExtension.lowercased()
-            
-            if videoExts.contains(ext) {
-                // 视频文件：提取第一帧
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let asset = AVAsset(url: URL(fileURLWithPath: localPath))
-                    let generator = AVAssetImageGenerator(asset: asset)
-                    generator.appliesPreferredTrackTransform = true
-                    generator.maximumSize = CGSize(width: 240, height: 240)
-                    let time = CMTime(seconds: 0, preferredTimescale: 600)
-                    let cgImage = try? generator.copyCGImage(at: time, actualTime: nil)
-                    DispatchQueue.main.async {
-                        self.isLoading = false
-                        if let cgImage {
-                            self.image = NSImage(cgImage: cgImage, size: .zero)
-                        } else {
-                            self.loadFailed = true
-                        }
-                    }
-                }
-            } else {
-                // 图片文件：直接加载
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let nsImage = NSImage(contentsOfFile: localPath)
-                    DispatchQueue.main.async {
-                        self.isLoading = false
-                        if let nsImage {
-                            self.image = nsImage
-                        } else {
-                            self.loadFailed = true
-                        }
-                    }
-                }
-            }
+            loadLocalMedia(from: localPath)
             return
         }
         
@@ -107,6 +86,26 @@ struct ThumbnailView: View {
            let nsImage = NSImage(contentsOf: localCachePath) {
             self.image = nsImage
             self.isLoading = false
+            return
+        }
+        
+        // 1.5 兼容旧缓存目录，命中后迁移到新目录
+        if FileManager.default.fileExists(atPath: legacyLocalCachePath.path),
+           let nsImage = NSImage(contentsOf: legacyLocalCachePath) {
+            self.image = nsImage
+            self.isLoading = false
+            DispatchQueue.global(qos: .background).async {
+                if let data = try? Data(contentsOf: self.legacyLocalCachePath) {
+                    try? data.write(to: self.localCachePath, options: .atomic)
+                }
+            }
+            return
+        }
+        
+        // 1.8 远程缩略图失效时，回退到本地下载文件（gallery-dl 场景）
+        if let fallbackLocalPath, !fallbackLocalPath.isEmpty,
+           FileManager.default.fileExists(atPath: fallbackLocalPath) {
+            loadLocalMedia(from: fallbackLocalPath)
             return
         }
         
@@ -141,10 +140,64 @@ struct ThumbnailView: View {
                 
                 // 3. 存到本地磁盘，下次直接读本地
                 DispatchQueue.global(qos: .background).async {
-                    try? data.write(to: localCachePath)
+                    try? data.write(to: localCachePath, options: .atomic)
                 }
             }
         }.resume()
+    }
+    
+    private func loadLocalMedia(from localPath: String) {
+        let videoExts = ["mp4", "mov", "mkv", "webm", "m4v"]
+        let ext = (localPath as NSString).pathExtension.lowercased()
+        
+        if videoExts.contains(ext) {
+            // 视频文件：提取第一帧
+            DispatchQueue.global(qos: .userInitiated).async {
+                let asset = AVAsset(url: URL(fileURLWithPath: localPath))
+                let generator = AVAssetImageGenerator(asset: asset)
+                generator.appliesPreferredTrackTransform = true
+                generator.maximumSize = CGSize(width: 240, height: 240)
+                let time = CMTime(seconds: 0, preferredTimescale: 600)
+                let cgImage = try? generator.copyCGImage(at: time, actualTime: nil)
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    if let cgImage {
+                        let nsImage = NSImage(cgImage: cgImage, size: .zero)
+                        self.image = nsImage
+                        self.persistThumbnail(nsImage)
+                    } else {
+                        self.loadFailed = true
+                    }
+                }
+            }
+        } else {
+            // 图片文件：直接加载
+            DispatchQueue.global(qos: .userInitiated).async {
+                let nsImage = NSImage(contentsOfFile: localPath)
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    if let nsImage {
+                        self.image = nsImage
+                        self.persistThumbnail(nsImage)
+                    } else {
+                        self.loadFailed = true
+                    }
+                }
+            }
+        }
+    }
+    
+    private func persistThumbnail(_ image: NSImage) {
+        guard !FileManager.default.fileExists(atPath: localCachePath.path) else { return }
+        
+        DispatchQueue.global(qos: .background).async {
+            guard let tiffData = image.tiffRepresentation,
+                  let bitmap = NSBitmapImageRep(data: tiffData),
+                  let jpegData = bitmap.representation(using: .jpeg, properties: [.compressionFactor: 0.82]) else {
+                return
+            }
+            try? jpegData.write(to: localCachePath, options: .atomic)
+        }
     }
 }
 
@@ -160,8 +213,11 @@ struct DownloadTaskRow: View {
         HStack(alignment: .center, spacing: 12) {
             // 缩略图
             if showThumbnails {
-                if !task.thumbnailURL.isEmpty {
-                    ThumbnailView(taskID: task.id, url: task.thumbnailURL)
+                if !task.thumbnailURL.isEmpty || !task.filePath.isEmpty {
+                    let thumbnailSource = !task.thumbnailURL.isEmpty
+                        ? task.thumbnailURL
+                        : ("file://" + task.filePath)
+                    ThumbnailView(taskID: task.id, url: thumbnailSource, fallbackLocalPath: task.filePath)
                         .transition(.opacity)
                 } else {
                     // 占位图
