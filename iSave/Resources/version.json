@@ -1,14 +1,14 @@
 {
   "appId": "com.ceaule.iSave",
-  "latest": "1.0.0",
-  "minSupported": "1.0.0",
+  "latest": "1.0.1",
+  "minSupported": "1.0.1",
   "build": 100,
-  "title": "iSave 1.0.0",
+  "title": "iSave 1.0.1",
   "notes": [
-    "首个开源版本发布"
+    "1、ig链接图片缓存不显示"
   ],
   "pubDate": "2026-03-05T00:00:00Z",
-  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/1.0.0/iSave.dmg",
+  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/1.0.1/iSave.dmg",
   "releasePage": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/akiralereal/iSave/main/iSave/Resources/release-notes.html",
   "mandatory": false
 }
