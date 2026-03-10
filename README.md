@@ -48,22 +48,6 @@ In Xcode:
 
 > Xcode will automatically resolve SPM dependencies on first build.
 
-## Updating Bundled Tools
-
-### yt-dlp
-
-```bash
-curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos -o iSave/yt-dlp
-chmod +x iSave/yt-dlp
-```
-
-### gallery-dl
-
-```bash
-curl -L https://github.com/mikf/gallery-dl/releases/latest/download/gallery-dl.bin -o iSave/gallery-dl
-chmod +x iSave/gallery-dl
-```
-
 ## Contributing
 
 Issues and Pull Requests are welcome.
