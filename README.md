@@ -34,20 +34,6 @@ Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.o
 
 Visit the [Releases](https://github.com/akiralereal/iSave/releases) page to download the latest `.dmg`.
 
-## Build from Source
-
-```bash
-git clone https://github.com/akiralereal/iSave.git
-cd iSave
-open iSave.xcodeproj
-```
-
-In Xcode:
-1. **Signing & Capabilities** → select your own Apple Developer account
-2. **Product → Run** (⌘R)
-
-> Xcode will automatically resolve SPM dependencies on first build.
-
 ## Contributing
 
 Issues and Pull Requests are welcome.
