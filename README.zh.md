@@ -34,36 +34,6 @@
 
 前往 [Releases](https://github.com/akiralereal/iSave/releases) 页面下载最新版本 `.dmg` 文件。
 
-## 从源码构建
-
-```bash
-git clone https://github.com/akiralereal/iSave.git
-cd iSave
-open iSave.xcodeproj
-```
-
-在 Xcode 中：
-1. **Signing & Capabilities** → 选择你自己的 Apple Developer 账号
-2. **Product → Run**（⌘R）
-
-> 首次构建 Xcode 会自动拉取 SPM 依赖，无需手动操作。
-
-## 更新内置工具
-
-### yt-dlp
-
-```bash
-curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos -o iSave/yt-dlp
-chmod +x iSave/yt-dlp
-```
-
-### gallery-dl
-
-```bash
-curl -L https://github.com/mikf/gallery-dl/releases/latest/download/gallery-dl.bin -o iSave/gallery-dl
-chmod +x iSave/gallery-dl
-```
-
 ## 参与贡献
 
 欢迎提交 Issue 和 Pull Request。
