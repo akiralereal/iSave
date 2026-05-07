@@ -1,14 +1,14 @@
 {
   "appId": "com.ceaule.iSave",
-  "latest": "1.0.1",
+  "latest": "1.1.0",
   "minSupported": "1.0.1",
-  "build": 100,
-  "title": "iSave 1.0.1",
+  "build": 101,
+  "title": "iSave 1.1.0",
   "notes": [
-    "1、ig链接图片缓存不显示"
+    "升级 bundled yt-dlp 以修复 YouTube 在登录态下下载卡住的问题"
   ],
-  "pubDate": "2026-03-05T00:00:00Z",
-  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/1.0.1/iSave.dmg",
+  "pubDate": "2026-05-07T00:00:00Z",
+  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/1.1.0/iSave.dmg",
   "releasePage": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/akiralereal/iSave/main/iSave/Resources/release-notes.html",
   "mandatory": false
 }
