@@ -16,6 +16,13 @@ struct VersionInfo: Codable {
     let mandatory: Bool
 }
 
+// MARK: - Update Check Result
+enum UpdateCheckResult {
+    case newVersion   // 有可用更新
+    case upToDate     // 已是最新
+    case failed       // 网络/解析失败
+}
+
 // MARK: - Version Checker
 @MainActor
 class VersionChecker: ObservableObject {
@@ -32,10 +39,11 @@ class VersionChecker: ObservableObject {
     
     /// 检查版本更新
     /// - Parameter autoShowAlert: 是否自动显示弹窗（启动时为true，手动检查为false）
-    func checkForUpdates(autoShowAlert: Bool = false) async {
+    @discardableResult
+    func checkForUpdates(autoShowAlert: Bool = false) async -> UpdateCheckResult {
         guard let url = URL(string: versionURL) else {
             print("⚠️ [VersionChecker] URL 无效")
-            return
+            return .failed
         }
         
         print("🔍 [VersionChecker] 开始检查更新... autoShowAlert=\(autoShowAlert)")
@@ -63,11 +71,15 @@ class VersionChecker: ObservableObject {
                     hasShownAutoAlert = true
                     print("🔍 [VersionChecker] showUpdateAlert 已设为 true")
                 }
+                return .newVersion
             } else {
+                hasNewVersion = false
                 print("🔍 [VersionChecker] 已是最新版本，无需更新")
+                return .upToDate
             }
         } catch {
             print("检查版本更新失败: \(error)")
+            return .failed
         }
     }
     

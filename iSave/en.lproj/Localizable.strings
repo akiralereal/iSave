@@ -144,6 +144,7 @@
 "version.check_update" = "Check for Updates";
 "version.up_to_date" = "You have the latest version";
 "version.new_version" = "New version available: %@";
+"version.checking" = "Checking…";
 
 /* Update Alert */
 "update.new_version_available" = "New Version Available";
@@ -153,6 +154,9 @@
 "update.later" = "Later";
 "update.view_details" = "View Details";
 "update.download_now" = "Download Now";
+"update.up_to_date_message" = "You're already on the latest version.";
+"update.check_failed_title" = "Update Check Failed";
+"update.check_failed_message" = "Couldn't reach the update server. Please check your connection and try again.";
 
 /* Storage Management */
 "storage.title" = "Storage Management";

@@ -145,6 +145,7 @@
 "version.check_update" = "检查更新";
 "version.up_to_date" = "已是最新版本";
 "version.new_version" = "发现新版本：%@";
+"version.checking" = "检查中…";
 
 /* Update Alert */
 "update.new_version_available" = "发现新版本";
@@ -154,6 +155,9 @@
 "update.later" = "稍后";
 "update.view_details" = "查看详情";
 "update.download_now" = "立即下载";
+"update.up_to_date_message" = "当前已是最新版本，无需更新。";
+"update.check_failed_title" = "检查更新失败";
+"update.check_failed_message" = "无法连接到更新服务器，请检查网络后重试。";
 
 /* Storage Management */
 "storage.title" = "存储管理";

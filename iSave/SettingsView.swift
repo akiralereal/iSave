@@ -275,6 +275,9 @@ struct SettingsView: View {
     @StateObject private var versionChecker = VersionChecker.shared
     @State private var isCheckingUpdate = false
     @State private var showUpdateAlert = false
+    @State private var showResultAlert = false
+    @State private var resultAlertTitle = ""
+    @State private var resultAlertMessage = ""
     
     private var versionCheckSettings: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -303,7 +306,7 @@ struct SettingsView: View {
                         } else {
                             Image(systemName: "arrow.triangle.2.circlepath")
                         }
-                        Text(LocalizedString("version.check_update"))
+                        Text(LocalizedString(isCheckingUpdate ? "version.checking" : "version.check_update"))
                     }
                     .frame(width: 200, height: 40)
                     .background(Color.gray.opacity(0.1))
@@ -336,14 +339,39 @@ struct SettingsView: View {
         .sheet(isPresented: $showUpdateAlert) {
             UpdateAlertView(versionChecker: versionChecker, isPresented: $showUpdateAlert)
         }
+        .alert(resultAlertTitle, isPresented: $showResultAlert) {
+            Button(LocalizedString("action.ok")) { }
+        } message: {
+            Text(resultAlertMessage)
+        }
     }
-    
+
     private func checkForUpdates() {
         isCheckingUpdate = true
-        
+
         Task {
-            await versionChecker.checkForUpdates()
+            // 让加载状态至少可见约 0.5s，避免请求过快时 loading 一闪而过
+            let start = Date()
+            let result = await versionChecker.checkForUpdates()
+            let elapsed = Date().timeIntervalSince(start)
+            if elapsed < 0.5 {
+                try? await Task.sleep(nanoseconds: UInt64((0.5 - elapsed) * 1_000_000_000))
+            }
             isCheckingUpdate = false
+
+            switch result {
+            case .newVersion:
+                // 发现新版本：直接弹出更新详情弹窗
+                showUpdateAlert = true
+            case .upToDate:
+                resultAlertTitle = LocalizedString("version.up_to_date")
+                resultAlertMessage = LocalizedString("update.up_to_date_message")
+                showResultAlert = true
+            case .failed:
+                resultAlertTitle = LocalizedString("update.check_failed_title")
+                resultAlertMessage = LocalizedString("update.check_failed_message")
+                showResultAlert = true
+            }
         }
     }
     
