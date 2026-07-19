@@ -1,14 +1,15 @@
 {
   "appId": "com.ceaule.iSave",
-  "latest": "1.1.0",
+  "latest": "1.2.0",
   "minSupported": "1.0.1",
-  "build": 101,
-  "title": "iSave 1.1.0",
+  "build": 3,
+  "title": "iSave 1.2.0",
   "notes": [
-    "升级 bundled yt-dlp 以修复 YouTube 在登录态下下载卡住的问题"
+    "更新内置下载引擎（yt-dlp / gallery-dl / deno），提升各平台下载兼容性与稳定性",
+    "ffmpeg 升级至 8.1 并改为原生 Apple Silicon 版本，转码更快、无需 Rosetta"
   ],
-  "pubDate": "2026-05-07T00:00:00Z",
-  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/1.1.0/iSave.dmg",
-  "releasePage": "https://htmlpreview.github.io/?https://raw.githubusercontent.com/akiralereal/iSave/main/iSave/Resources/release-notes.html",
+  "pubDate": "2026-07-19T00:00:00Z",
+  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/v1.2.0/iSave.dmg",
+  "releasePage": "https://github.com/akiralereal/iSave/releases/tag/v1.2.0",
   "mandatory": false
 }
