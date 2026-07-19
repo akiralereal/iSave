@@ -1,15 +1,15 @@
 {
   "appId": "com.ceaule.iSave",
-  "latest": "1.2.0",
+  "latest": "1.2.1",
   "minSupported": "1.0.1",
-  "build": 3,
-  "title": "iSave 1.2.0",
+  "build": 4,
+  "title": "iSave 1.2.1",
   "notes": [
-    "更新内置下载引擎（yt-dlp / gallery-dl / deno），提升各平台下载兼容性与稳定性",
-    "ffmpeg 升级至 8.1 并改为原生 Apple Silicon 版本，转码更快、无需 Rosetta"
+    "优化「检查更新」：发现新版本时自动弹出更新窗口",
+    "检查更新增加加载状态；已是最新或检查失败也会明确提示"
   ],
   "pubDate": "2026-07-19T00:00:00Z",
-  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/v1.2.0/iSave.dmg",
-  "releasePage": "https://github.com/akiralereal/iSave/releases/tag/v1.2.0",
+  "downloadUrl": "https://github.com/akiralereal/iSave/releases/download/v1.2.1/iSave.dmg",
+  "releasePage": "https://github.com/akiralereal/iSave/releases/tag/v1.2.1",
   "mandatory": false
 }
