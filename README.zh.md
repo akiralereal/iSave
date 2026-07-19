@@ -28,7 +28,7 @@
 ## 系统要求
 
 - macOS 12.4 或更高版本
-- Apple Silicon 或 Intel
+- Apple Silicon（M1 及以上）
 
 ## 下载
 

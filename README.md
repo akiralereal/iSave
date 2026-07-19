@@ -28,7 +28,7 @@ Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.o
 ## Requirements
 
 - macOS 12.4 or later
-- Apple Silicon or Intel
+- Apple Silicon (M1 or later)
 
 ## Download
 
