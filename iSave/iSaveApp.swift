@@ -43,9 +43,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if let button = statusItem?.button {
             // 尝试使用自定义状态栏图标
-            if let customIcon = NSImage(named: "status_icon") {
+            if let customIcon = NSImage(named: "status_icon")?.copy() as? NSImage {
                 // 设置图标尺寸
                 customIcon.size = NSSize(width: 18, height: 18)
+                // 状态栏图标必须使用模板渲染，系统才会根据菜单栏外观自动切换颜色
+                customIcon.isTemplate = true
                 button.image = customIcon
             } else {
                 // 使用 SF Symbol 作为默认图标
