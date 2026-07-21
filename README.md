@@ -15,25 +15,6 @@ Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.o
 
 ---
 
-## Features
-
-- **Multi-platform**: YouTube, Instagram, TikTok, Bilibili, and 1000+ sites supported by yt-dlp
-- **Flexible formats**: Export as MP4, MKV, MP3, or M4A
-- **Quality options**: Choose video resolution and audio bitrate
-- **Concurrent downloads**: Set 1 / 2 / 3 / 5 simultaneous tasks
-- **Cookie support**: Automatically reads cookies from Safari, Chrome, etc. for login-required content
-- **Sleep prevention**: Keeps the system awake during downloads
-- **Auto update check**: Built-in version checker
-
-## Requirements
-
-- macOS 12.4 or later
-- Apple Silicon (M1 or later)
-
-## Download
-
-Visit the [Releases](https://github.com/akiralereal/iSave/releases) page to download the latest `.dmg`.
-
 ## ☕ Sponsor / Buy Me a Coffee
 
 > If this project helps you, consider supporting it :)
@@ -58,6 +39,27 @@ Visit the [Releases](https://github.com/akiralereal/iSave/releases) page to down
     </td>
   </tr>
 </table>
+
+---
+
+## Features
+
+- **Multi-platform**: YouTube, Instagram, TikTok, Bilibili, and 1000+ sites supported by yt-dlp
+- **Flexible formats**: Export as MP4, MKV, MP3, or M4A
+- **Quality options**: Choose video resolution and audio bitrate
+- **Concurrent downloads**: Set 1 / 2 / 3 / 5 simultaneous tasks
+- **Cookie support**: Automatically reads cookies from Safari, Chrome, etc. for login-required content
+- **Sleep prevention**: Keeps the system awake during downloads
+- **Auto update check**: Built-in version checker
+
+## Requirements
+
+- macOS 12.4 or later
+- Apple Silicon (M1 or later)
+
+## Download
+
+Visit the [Releases](https://github.com/akiralereal/iSave/releases) page to download the latest `.dmg`.
 
 ## Contributing
 
