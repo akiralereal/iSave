@@ -34,6 +34,31 @@ Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), [ffmpeg](https://ffmpeg.o
 
 Visit the [Releases](https://github.com/akiralereal/iSave/releases) page to download the latest `.dmg`.
 
+## ☕ Sponsor / Buy Me a Coffee
+
+> If this project helps you, consider supporting it :)
+
+<table>
+  <tr>
+    <td align="center"><b>❤️ GitHub Sponsors</b></td>
+    <td align="center"><b>☕ Ko-fi</b></td>
+    <td align="center"><b>💰 USDT (TRC20)</b></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/sponsors/akiralereal" target="_blank"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-EA4AAA?logo=githubsponsors&logoColor=white&style=for-the-badge" alt="GitHub Sponsors"/></a>
+    </td>
+    <td align="center">
+      <a href="https://ko-fi.com/akirale" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-fi"/></a>
+    </td>
+    <td align="center">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TArpwDgewYSFCYX6XoJ6drwpEU6UGBw5yq" width="200" alt="USDT TRC20 QR Code"/><br/>
+      <code>TArpwDgewYSFCYX6XoJ6drwpEU6UGBw5yq</code><br/><br/>
+      <sub>⚠️ Only via <b>TRON (TRC20)</b> network — do not use any other network</sub>
+    </td>
+  </tr>
+</table>
+
 ## Contributing
 
 Issues and Pull Requests are welcome.
