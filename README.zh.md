@@ -34,6 +34,31 @@
 
 前往 [Releases](https://github.com/akiralereal/iSave/releases) 页面下载最新版本 `.dmg` 文件。
 
+## ☕ 打赏支持 / Buy Me a Coffee
+
+> 如果这个项目对你有帮助，欢迎支持一下 :)
+
+<table>
+  <tr>
+    <td align="center"><b>❤️ GitHub Sponsors</b></td>
+    <td align="center"><b>☕ Ko-fi</b></td>
+    <td align="center"><b>💰 USDT (TRC20)</b></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/sponsors/akiralereal" target="_blank"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-EA4AAA?logo=githubsponsors&logoColor=white&style=for-the-badge" alt="GitHub Sponsors"/></a>
+    </td>
+    <td align="center">
+      <a href="https://ko-fi.com/akirale" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-fi"/></a>
+    </td>
+    <td align="center">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TArpwDgewYSFCYX6XoJ6drwpEU6UGBw5yq" width="200" alt="USDT TRC20 QR Code"/><br/>
+      <code>TArpwDgewYSFCYX6XoJ6drwpEU6UGBw5yq</code><br/><br/>
+      <sub>⚠️ 仅支持 <b>TRON (TRC20)</b> 网络，请勿使用其他网络<br/>Only via <b>TRON (TRC20)</b> network</sub>
+    </td>
+  </tr>
+</table>
+
 ## 参与贡献
 
 欢迎提交 Issue 和 Pull Request。
